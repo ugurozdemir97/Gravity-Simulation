@@ -1,9 +1,10 @@
 // To create particles and calculate their masses, velocity and size
 class Particle {
     
-    constructor (color, mass, vector) {
+    constructor (color, mass, vector, isStatic) {
         this.color = color;
         this.mass = mass;
+        this.isStatic = isStatic;
         this.size = this.getSize();
         this.x = this.positionX(vector);
         this.y = this.positionY(vector);
@@ -83,11 +84,14 @@ class Particle {
 
         }
 
+        // If the particle is a static particle
+        if (this.isStatic) {return}
+        
         this.x += this.vx; this.y += this.vy;
             
-        // If the particle is outside of the canvas reverse the direction
-        if (this.x <= 25 || this.x >= (canvasWidth - 25)) {this.vx *= -1} 
-        if (this.y <= 25 || this.y >= (canvasHeight - 25)) {this.vy *= -1}
+        // If you want the particles to bounce off the canvas walls remove the comment lines, these will reverse the direction
+        // if (this.x <= 25 || this.x >= (canvasWidth - 25)) {this.vx *= -1} 
+        // if (this.y <= 25 || this.y >= (canvasHeight - 25)) {this.vy *= -1}
     }
 
 }
@@ -177,19 +181,22 @@ function releaseCoordinates (e) {
                 let element = document.getElementsByClassName("border");
                 switch (element[0].innerHTML) {
                     case "R":
-                        new Particle("red", redMass, vector)
+                        new Particle("red", redMass, vector, false)
                         break;
                     case "Y":
-                        new Particle("yellow", yellowMass, vector)
+                        new Particle("yellow", yellowMass, vector, false)
                         break;
                     case "G":
-                        new Particle("green", greenMass, vector)
+                        new Particle("green", greenMass, vector, false)
                         break;
                     case "B":
-                        new Particle("blue", blueMass, vector)
+                        new Particle("blue", blueMass, vector, false)
                         break;
                     case "W":
-                        new Particle("white", whiteMass, vector)
+                        new Particle("white", whiteMass, vector, false)
+                        break;
+                    case "S":
+                        new Particle("black", staticMass, vector, true)
                         break;
                 };
             };
@@ -260,6 +267,7 @@ function createAndRun () {
     let greenCount = document.getElementById("randomGreen").value;
     let blueCount = document.getElementById("randomBlue").value;
     let whiteCount = document.getElementById("randomWhite").value;
+    let staticCount = document.getElementById("randomStatic").value;
 
     // Mass of the particles
     redMass = document.getElementById("redMass").value;
@@ -267,13 +275,15 @@ function createAndRun () {
     greenMass = document.getElementById("greenMass").value;
     blueMass = document.getElementById("blueMass").value;
     whiteMass = document.getElementById("whiteMass").value;
+    staticMass = document.getElementById("staticMass").value;
 
     // Generate the random particles if any
-    for (let i = 0; i < redCount; i++) {new Particle("red", redMass, 0)}
-    for (let i = 0; i < yellowCount; i++) {new Particle("yellow", yellowMass, 0)}
-    for (let i = 0; i < greenCount; i++) {new Particle("green", greenMass, 0)}
-    for (let i = 0; i < blueCount; i++) {new Particle("blue", blueMass, 0)}
-    for (let i = 0; i < whiteCount; i++) {new Particle("white", whiteMass, 0)}
+    for (let i = 0; i < redCount; i++) {new Particle("red", redMass, 0, false)}
+    for (let i = 0; i < yellowCount; i++) {new Particle("yellow", yellowMass, 0, false)}
+    for (let i = 0; i < greenCount; i++) {new Particle("green", greenMass, 0, false)}
+    for (let i = 0; i < blueCount; i++) {new Particle("blue", blueMass, 0, false)}
+    for (let i = 0; i < whiteCount; i++) {new Particle("white", whiteMass, 0, false)}
+    for (let i = 0; i < staticCount; i++) {new Particle("black", staticMass, 0, true)}
 
     updateCanvas()
     
