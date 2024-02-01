@@ -24,6 +24,7 @@
             <div class="green color" onclick="addBorder(this)">G</div>
             <div class="blue color" onclick="addBorder(this)">B</div>
             <div class="white color" onclick="addBorder(this)">W</div>
+            <div class="black color" onclick="addBorder(this)">S</div>
         </div>
     </header>
 
@@ -57,6 +58,12 @@
                 <input id="whiteMass" type="range" min="10" max="10000" value="10" class="slider" oninput="showValue(this)">
                 <output>10</output>
             </div>
+            Static Mass
+            <div class="flex">
+                <div class="black color">S</div>
+                <input id="staticMass" type="range" min="10" max="10000" value="5000" class="slider" oninput="showValue(this)">
+                <output>5000</output>
+            </div>
             <div class="emptySpace"></div>
 
             <!-- Random generations-->
@@ -84,6 +91,12 @@
             <div class="flex">
                 <div class="white color">W</div>
                 <input id="randomWhite" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            Static Mass
+            <div class="flex">
+                <div class="black color">S</div>
+                <input id="randomStatic" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
                 <output>0</output>
             </div>
             <button type="button" onclick="createAndRun()">Run the Simulation</button>
