@@ -44,6 +44,10 @@ output {
 .yellow {background-color: yellow}
 .white {background-color: white}
 .cyan {background-color: cyan}
+.black {
+    border: 1px solid white;
+    color: white
+}
 
 button {
     position: absolute;
@@ -76,7 +80,7 @@ header {  /* Navbar to create particles */
 
 header .color {cursor: pointer}
 
-.border {border: 1px solid white}
+.border {border: 3px solid white}
 
 article {  /* To center the canvas */
     flex-direction: column;
