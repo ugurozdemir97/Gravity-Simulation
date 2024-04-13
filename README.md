@@ -9,3 +9,5 @@ You can change the min-max values of sliders in HTML if you wish but too many pa
 The G value can be changed to make the animations faster or slower.
 
 It's not responsive so it may not work properly in mobile or tablet screens and if you resize your browser the canvas size won't be resized. So you should refresh the page after you resize :)
+
+You can try here: <a href="https://ugurozdemir97.github.io/Gravity-Simulation/">Gravity Simulation</a>
