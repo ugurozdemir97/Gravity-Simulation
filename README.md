@@ -11,3 +11,11 @@ The G value can be changed to make the animations faster or slower.
 It's not responsive so it may not work properly in mobile or tablet screens and if you resize your browser the canvas size won't be resized. So you should refresh the page after you resize :)
 
 You can try here: <a href="https://ugurozdemir97.github.io/Gravity-Simulation/">Gravity Simulation</a>
+
+Generate random masses this way:
+
+![GenerateRandom](https://github.com/ugurozdemir97/Gravity-Simulation/assets/64408736/accbe483-3bc9-472b-9a60-9b0231589e3e)
+
+You can manually click and drag to create dynamic or static masses like this:
+
+![Mass](https://github.com/ugurozdemir97/Gravity-Simulation/assets/64408736/0e256a35-a453-43fd-8663-3e78d7b4acc9)
