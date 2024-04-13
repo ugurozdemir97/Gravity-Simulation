@@ -1,0 +1,117 @@
+<!DOCTYWE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Simulation</title>
+    <link rel="icon" href="icon.png?v=2">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar will be used for creating particles, how many of each particle -->
+    <header class="flex">
+        <div class="font">
+            After you run the simulation you can select a button > Click and drag the canvas to generate masses manually 
+            <img src="arrow.png" width="30px" height="20px">
+        </div>
+        <div class="flex">
+            <div class="red color" onclick="addBorder(this)">R</div>
+            <div class="yellow color" onclick="addBorder(this)">Y</div>
+            <div class="green color" onclick="addBorder(this)">G</div>
+            <div class="blue color" onclick="addBorder(this)">B</div>
+            <div class="white color" onclick="addBorder(this)">W</div>
+            <div class="black color" onclick="addBorder(this)">S</div>
+        </div>
+    </header>
+
+    <main>
+        <aside class="flex">
+
+            <!-- Mass settings -->
+            <div class="font">Mass of particles <img src="arrow.png" width="30px" height="20px"></div>
+            <div class="flex">
+                <div class="red color">R</div>
+                <input id="redMass" type="range" min="10" max="10000" value="1000" class="slider" oninput="showValue(this)">
+                <output>1000</output>
+            </div>
+            <div class="flex">
+                <div class="yellow color">Y</div>
+                <input id="yellowMass" type="range" min="10" max="10000" value="500" class="slider" oninput="showValue(this)">
+                <output>500</output>
+            </div>
+            <div class="flex">
+                <div class="green color">G</div>
+                <input id="greenMass" type="range" min="10" max="10000" value="50" class="slider" oninput="showValue(this)">
+                <output>50</output>
+            </div>
+            <div class="flex">
+                <div class="blue color">B</div>
+                <input id="blueMass" type="range" min="10" max="10000" value="20" class="slider" oninput="showValue(this)">
+                <output>20</output>
+            </div>
+            <div class="flex">
+                <div class="white color">W</div>
+                <input id="whiteMass" type="range" min="10" max="10000" value="10" class="slider" oninput="showValue(this)">
+                <output>10</output>
+            </div>
+            Static Mass
+            <div class="flex">
+                <div class="black color">S</div>
+                <input id="staticMass" type="range" min="10" max="100000" value="5000" class="slider" oninput="showValue(this)">
+                <output>5000</output>
+            </div>
+            <div class="emptySpace"></div>
+
+            <!-- Random generations-->
+            <div class="font">Generate random particles <img src="arrow.png" width="30px" height="20px"></div>
+            <div class="flex">
+                <div class="red color">R</div>
+                <input id="randomRed" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            <div class="flex">
+                <div class="yellow color">Y</div>
+                <input id="randomYellow" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            <div class="flex">
+                <div class="green color">G</div>
+                <input id="randomGreen" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            <div class="flex">
+                <div class="blue color">B</div>
+                <input id="randomBlue" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            <div class="flex">
+                <div class="white color">W</div>
+                <input id="randomWhite" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            Static Mass
+            <div class="flex">
+                <div class="black color">S</div>
+                <input id="randomStatic" type="range" min="0" max="150" value="0" class="slider" oninput="showValue(this)">
+                <output>0</output>
+            </div>
+            <button type="button" onclick="createAndRun()">Run the Simulation</button>
+        </aside>
+    
+        <!-- Canvas area -->
+        <article class="flex">
+            <canvas id="space"></canvas>  <!-- Every particles will be drawn here -->  
+        </article>
+    </main> 
+
+</body>
+
+<footer>
+    <script src="index.js"></script>  <!-- Main JS -->
+</footer>
+</html>

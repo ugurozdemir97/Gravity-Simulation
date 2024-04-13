@@ -1,0 +1,102 @@
+body {padding: 0; margin: 0}
+main {display: flex}
+
+.font {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {flex-direction: column}
+
+input[type=number] {
+    height: 23px; width: 90px;
+    padding-left: 10px;
+    border-radius: 4px
+}
+
+.slider {width: 250px}
+
+output {
+    margin-left: 10px;
+    width: 20px;
+    color: white
+}
+
+.color {
+    height: 20px; width: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    line-height: 20px;
+    text-align: center;
+    user-select: none;
+    color: black
+}
+
+.red {background-color: red}
+.green {background-color: green}
+.blue {background-color: blue}
+.yellow {background-color: yellow}
+.white {background-color: white}
+.cyan {background-color: cyan}
+.black {
+    border: 1px solid white;
+    color: white
+}
+
+button {
+    position: absolute;
+    bottom: 30px;
+    border: 1px solid white;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(20, 17, 41);
+    cursor: pointer;
+}
+
+.emptySpace {height: 50px}
+
+button:hover {background-color: rgb(34, 29, 70)}
+button:active {background-color: rgb(40, 63, 88)}
+
+header {  /* Navbar to create particles */
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    background-color: black;
+    height: 70px;
+    flex-direction: column;
+    row-gap: 5px;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    color: white
+}
+
+header .color {cursor: pointer}
+
+.border {border: 3px solid white}
+
+article {  /* To center the canvas */
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgb(20, 11, 79);
+    margin-top: 70px;
+    height: calc(100vh - 70px); width: 100% 
+}
+
+aside {
+    background-color: black;
+    width: 500px;
+    box-sizing: border-box;
+    flex-direction: column;
+    row-gap: 5px;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    color: white
+}
